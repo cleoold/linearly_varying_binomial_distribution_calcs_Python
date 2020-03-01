@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include setup.py
+include lvbdist/__init__.py
+include lvbdist/lvbdist_back.c
+include lvbdist/lvbdistcalcs/prob_func.c
+include lvbdist/lvbdistcalcs/prob_func.h
