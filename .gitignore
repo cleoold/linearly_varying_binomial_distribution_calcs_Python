@@ -129,12 +129,13 @@ dmypy.json
 .pyre/
 
 # venv
-bin
-include
-lib
-lib64
-share
-scripts
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ss]hare
+[Ss]cripts
+pyvenv.cfg
 
 # editor
 .vscode

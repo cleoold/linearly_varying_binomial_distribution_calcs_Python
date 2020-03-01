@@ -1,10 +1,14 @@
 # linearly varying_binomial distribution calculations
 
-This is a wrapper module for the previous repo: [README](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs/blob/master/README.md)
+```
+pip install linearly-varying-binomial-distribution
+```
+
+This is a wrapper module for the previous repo: [C PROGRAM](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs)
 
 ### Description of the math
 
-The cardpool of the game looks like:
+Imagine the cardpool of a ptw game looks like:
 
 One can flip a card. there is a probability (here say 0.02) to have a prize at the beginning.
 * If one does not have the prize for 50 attempts in a row, the constant (here say 0.02) will be added to the existing probability (so that the chance of having the prize is increasing) until one finally has the prize, at which point the chance will reset to the original one.
@@ -32,5 +36,45 @@ We can calculate the average number of attempts they need to make to have the pr
 x.have_first_success_at_n_E() # 34.59455
 ```
 
-Both [README](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs/blob/master/README.md) and module __init__ are very descriptive, please have a read!
+We can also calculate the average successes in 60 attempts:
+```py
+x.have_m_successes_within_n_attempts_E(60) # 1.443428
+```
+
+Function names are self-descriptive. Note that functions ending with `_E` are expectated values. There always exist a function without the `_E` suffix.
+
+Refer to [the lazily generated doc](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs_Python/tree/master/doc/index.html) for all functions.
+
+
+### Building
+
+Requirements: setuptools, and any modern C compiler shall work
+
+Clone the repository:
+```bash
+git clone --recurse-submodules https://github.com/cleoold/linearly_varying_binomial_distribution_calcs_Python
+```
+
+You can install the package by running
+```bash
+make install
+```
+
+#### Developing
+
+(Optional) set up a virtual env
+```bash
+python3 -m venv . # pyvenv .
+source bin/activate
+```
+
+build the package in-place in the `lvbdist` folder by running
+```bash
+make debugging
+```
+And then build the distributable:
+```bash
+bin/pip3 install wheel
+make release
+```
 
