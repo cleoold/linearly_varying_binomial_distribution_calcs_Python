@@ -13,7 +13,7 @@ def main():
     )
 
     setup(name="linearly-varying-binomial-distribution",
-          version="1.0.1",
+          version="1.0.2",
           description="computes ununiform step-increasing probability problems",
           long_description=long_description,
           long_description_content_type="text/markdown",

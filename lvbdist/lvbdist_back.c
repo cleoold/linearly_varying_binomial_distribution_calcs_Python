@@ -67,13 +67,19 @@ LVBDIST_PROVIDE(have_m_successes_within_n_attempts_E) {
 
 LVBDIST_PROVIDE(have_special_success_within_n_attempts) {
     LVBDIST_SCAN_ARG_AND_DECLARE("id", int n;probability p, &n, &p);
-    if (p <= 0 || p >= 1) PyErr_SetString(PyExc_ValueError, "Invalid probability");
+    if (p <= 0 || p >= 1) {
+        PyErr_SetString(PyExc_ValueError, "Invalid probability");
+        return NULL;
+    }
     LVBDIST_RETURN(have_special_success_within_n_attempts, n, p);
 }
 
 LVBDIST_PROVIDE(have_special_success_within_n_attempts_E) {
     LVBDIST_SCAN_ARG_AND_DECLARE("d", probability p, &p);
-    if (p <= 0 || p >= 1) PyErr_SetString(PyExc_ValueError, "Invalid probability");
+    if (p <= 0 || p >= 1) {
+        PyErr_SetString(PyExc_ValueError, "Invalid probability");
+        return NULL;
+    }
     LVBDIST_RETURN(have_special_success_within_n_attempts_E, p);
 }
 
