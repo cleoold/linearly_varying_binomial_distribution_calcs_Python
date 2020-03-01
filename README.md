@@ -1,1 +1,36 @@
-# linearly_varying_binomial_distribution_calcs_Python
+# linearly varying_binomial distribution calculations
+
+This is a wrapper module for the previous repo: [README](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs/blob/master/README.md)
+
+### Description of the math
+
+The cardpool of the game looks like:
+
+One can flip a card. there is a probability (here say 0.02) to have a prize at the beginning.
+* If one does not have the prize for 50 attempts in a row, the constant (here say 0.02) will be added to the existing probability (so that the chance of having the prize is increasing) until one finally has the prize, at which point the chance will reset to the original one.
+
+For example, one tried 52 times and there have been no successes. At this point their chance for success for the 53rd time will be 0.08. If the 53-rd try is a success, then the chance for the 54-th try will be reset to 0.02, otherwise the chance becomes 0.10. Also the maximum number of tries allowed here is calculated 99, where the chance is 1.
+
+If he tries 60 times, we can calculate the chance of getting the prize with the following code:
+```py
+from lvbdist import LVBdistribution
+x = LVBdistribution(
+    0.02, # the starting probability 
+    0.02, # the constant to add
+    50    # numbr of failures before triggering the addition
+)
+x.have_success_within_n_attempts(60) # 0.911490
+
+```
+How about the probability they just get the prize at the 60th turn
+```py
+x.have_first_sucess_at_n(60) # 0.024964
+```
+
+We can calculate the average number of attempts they need to make to have the prize:
+```py
+x.have_first_sucess_at_n_E() # 34.59455
+```
+
+Both [README](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs/blob/master/README.md) and module __init__ are very descriptive, please have a read!
+
