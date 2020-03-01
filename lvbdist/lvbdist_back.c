@@ -35,12 +35,12 @@ LVBDIST_PROVIDE(have_success_given_no_successes_before) {
     LVBDIST_RETURN(have_success_given_no_successes_before, n);
 }
 
-LVBDIST_PROVIDE(have_first_sucess_at_n) {
+LVBDIST_PROVIDE(have_first_success_at_n) {
     LVBDIST_SCAN_ARG_AND_DECLARE("i", int n, &n);
     LVBDIST_RETURN(have_first_success_at_n, n);
 }
 
-LVBDIST_PROVIDE(have_first_sucess_at_n_E) {
+LVBDIST_PROVIDE(have_first_success_at_n_E) {
     LVBDIST_SCAN_ARG_AND_DECLARE("", );
     LVBDIST_RETURN(have_first_success_at_n_E);
 }
@@ -83,8 +83,8 @@ LVBDIST_PROVIDE(have_special_success_within_n_attempts_E) {
 static PyMethodDef LvbdistMethodexts[] = {
     { "cmax_times", methodext_max_times, METH_VARARGS, "" },
     { "chave_success_given_no_successes_before", methodext_have_success_given_no_successes_before, METH_VARARGS, "" },
-    { "chave_first_sucess_at_n", methodext_have_first_sucess_at_n, METH_VARARGS, "" },
-    { "chave_first_sucess_at_n_E", methodext_have_first_sucess_at_n_E, METH_VARARGS, "" },
+    { "chave_first_success_at_n", methodext_have_first_success_at_n, METH_VARARGS, "" },
+    { "chave_first_success_at_n_E", methodext_have_first_success_at_n_E, METH_VARARGS, "" },
     { "chave_success_within_n_attempts", methodext_have_success_within_n_attempts, METH_VARARGS, "" },
     { "chave_m_successes_within_n_attempts", methodext_have_m_successes_within_n_attempts, METH_VARARGS, "" },
     { "chave_m_or_more_successes_within_n_attempts", methodext_have_m_or_more_successes_within_n_attempts, METH_VARARGS, "" },

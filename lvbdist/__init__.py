@@ -2,8 +2,8 @@ __version__ = "1.0.0"
 
 from ._lvbdist import cmax_times as _cmax_times
 from ._lvbdist import chave_success_given_no_successes_before as _chave_success_given_no_successes_before
-from ._lvbdist import chave_first_sucess_at_n as _chave_first_sucess_at_n
-from ._lvbdist import chave_first_sucess_at_n_E as _chave_first_sucess_at_n_E
+from ._lvbdist import chave_first_success_at_n as _chave_first_success_at_n
+from ._lvbdist import chave_first_success_at_n_E as _chave_first_success_at_n_E
 from ._lvbdist import chave_success_within_n_attempts as _chave_success_within_n_attempts
 from ._lvbdist import chave_m_successes_within_n_attempts as _chave_m_successes_within_n_attempts
 from ._lvbdist import chave_m_or_more_successes_within_n_attempts as _chave_m_or_more_successes_within_n_attempts
@@ -35,20 +35,20 @@ class LVBdistribution:
         self.maxtimes = _cmax_times(base, additional, threshold)
     
     def max_times_to_ensure_success(self) -> int:
-        'the index of trail where the change is 1'
+        'the index of trail where the success chance is 1'
         return self.maxtimes
     
     def have_success_given_no_successes_before(self, n: int) -> float:
         'given that one failed for `n-1` times, the chance of success at `n`-th'
         return _chave_success_given_no_successes_before(self.base, self.additional, self.threshold, n)
     
-    def have_first_sucess_at_n(self, n: int) -> float:
+    def have_first_success_at_n(self, n: int) -> float:
         'the chance for one fails for `n-1` times, then succeed at `n`-th'
-        return _chave_first_sucess_at_n(self.base, self.additional, self.threshold, n)
+        return _chave_first_success_at_n(self.base, self.additional, self.threshold, n)
     
-    def have_first_sucess_at_n_E(self) -> float:
+    def have_first_success_at_n_E(self) -> float:
         'average waiting trails until a success'
-        return _chave_first_sucess_at_n_E(self.base, self.additional, self.threshold)
+        return _chave_first_success_at_n_E(self.base, self.additional, self.threshold)
     
     def have_success_within_n_attempts(self, n: int) -> float:
         'the chance of having at least one success within `n` trails'

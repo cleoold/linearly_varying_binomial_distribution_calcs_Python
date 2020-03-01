@@ -24,12 +24,12 @@ x.have_success_within_n_attempts(60) # 0.911490
 ```
 How about the probability they just get the prize at the 60th turn
 ```py
-x.have_first_sucess_at_n(60) # 0.024964
+x.have_first_success_at_n(60) # 0.024964
 ```
 
 We can calculate the average number of attempts they need to make to have the prize:
 ```py
-x.have_first_sucess_at_n_E() # 34.59455
+x.have_first_success_at_n_E() # 34.59455
 ```
 
 Both [README](https://github.com/cleoold/linearly_varying_binomial_distribution_calcs/blob/master/README.md) and module __init__ are very descriptive, please have a read!
