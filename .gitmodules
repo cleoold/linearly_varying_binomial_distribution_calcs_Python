@@ -1,0 +1,3 @@
+[submodule "lvbdist/lvbdistcalcs"]
+	path = lvbdist/lvbdistcalcs
+	url = https://github.com/cleoold/linearly_varying_binomial_distribution_calcs
