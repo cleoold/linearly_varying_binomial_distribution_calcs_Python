@@ -1,4 +1,4 @@
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 from ._lvbdist import cmax_times as _cmax_times
 from ._lvbdist import chave_success_given_no_successes_before as _chave_success_given_no_successes_before
