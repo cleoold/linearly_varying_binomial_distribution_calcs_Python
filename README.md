@@ -43,7 +43,7 @@ x.have_m_successes_within_n_attempts_E(60) # 1.443428
 
 Function names are self-descriptive. Note that functions ending with `_E` are expectated values. There always exist a function without the `_E` suffix.
 
-Refer to [the lazily generated doc](https://cdn.statically.io/gh/cleoold/linearly_varying_binomial_distribution_calcs_Python/master/doc/index.html) for all functions.
+Refer to [the lazily generated doc](https://cleoold.github.io/linearly_varying_binomial_distribution_calcs_Python/doc/) for all functions.
 
 
 ### Building
